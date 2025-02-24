@@ -1,7 +1,4 @@
 name: Run tests
-
- 
-
 on:
   workflow_dispatch:
 
@@ -32,5 +29,4 @@ jobs:
             cd ..
             cd test
             npm install
-
             ./node_modules/.bin/mocha *.js
