@@ -3,35 +3,18 @@ name: Run tests
  
 
 on:
-
   workflow_dispatch:
 
-  
-
 jobs:
-
   test:
-
     name: Test
-
     runs-on: ubuntu-22.04
-
- 
-
     container:
-
       image: node:20
-
- 
-
     steps:
-
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
-
         with:
-
           node-version: '20'
 
       - uses: browser-actions/setup-chrome@v1
@@ -39,23 +22,15 @@ jobs:
         with:
 
           chrome-version: 120
-
           install-dependencies: true
 
       - run: |
-
             cd src
-
             python3 -m http.server 8000 &
-
             sleep 10 &&
-
             curl http://localhost:8000
-
             cd ..
-
-            cd tests
-
+            cd test
             npm install
 
             ./node_modules/.bin/mocha *.js
