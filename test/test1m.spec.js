@@ -40,9 +40,6 @@ describe('test1-', function() {
   });
   it('test1-', async function() {
     await driver.get("http://localhost:8000/")
-    await driver.manage().window().setRect(1536, 800)
-    await driver.findElement(By.linkText("web_app_test/")).click()
-    await driver.findElement(By.linkText("src/")).click()
     await driver.findElement(By.id("num1")).click()
     await driver.findElement(By.id("num1")).sendKeys("1")
     await driver.findElement(By.id("num2")).click()
