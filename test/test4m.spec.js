@@ -39,7 +39,7 @@ describe('test4-', function() {
     }
   });
   it('test4-', async function() {
-    await driver.get("http://localhost:8000/web_app_test/src/")
+    await driver.get("http://localhost:8000/")
     await driver.findElement(By.id("num1")).click()
     await driver.findElement(By.id("num1")).sendKeys("h5-2")
     await driver.findElement(By.css(".wrapper")).click()
