@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('test1+', function() {
+describe('test5-', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,15 +13,15 @@ describe('test1+', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('test1+', async function() {
+  it('test5-', async function() {
     await driver.get("http://localhost:8000/")
     await driver.manage().window().setRect(1536, 800)
     await driver.findElement(By.linkText("web_app_test/")).click()
     await driver.findElement(By.linkText("src/")).click()
     await driver.findElement(By.id("num1")).click()
-    await driver.findElement(By.id("num1")).sendKeys("1")
+    await driver.findElement(By.id("num1")).sendKeys("4-6")
     await driver.findElement(By.id("num2")).click()
-    await driver.findElement(By.id("num2")).sendKeys("1")
-    await driver.findElement(By.css("button:nth-child(1)")).click()
+    await driver.findElement(By.id("num2")).sendKeys("3-8")
+    await driver.findElement(By.css("button:nth-child(2)")).click()
   })
 })
