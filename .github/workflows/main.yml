@@ -29,5 +29,5 @@ jobs:
             curl http://localhost:8000
             cd ..
             cd test
-            npm install
-            ./node_modules/.bin/mocha *.js
+            npm ci
+            npx mocha *.js
