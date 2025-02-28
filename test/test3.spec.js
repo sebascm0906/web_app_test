@@ -45,9 +45,5 @@ describe('test3+', function() {
     await driver.findElement(By.id("num2")).click()
     await driver.findElement(By.id("num2")).sendKeys("-30")
     await driver.findElement(By.css("button:nth-child(1)")).click()
-    {
-      const element = await driver.findElement(By.css("button:nth-child(3)"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
   })
 })

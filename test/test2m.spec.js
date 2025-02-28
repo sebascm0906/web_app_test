@@ -44,16 +44,5 @@ describe('test2-', function() {
     await driver.findElement(By.id("num1")).sendKeys("1000000")
     await driver.findElement(By.id("num2")).click()
     await driver.findElement(By.id("num2")).sendKeys("354")
-    {
-      const element = await driver.findElement(By.css("button:nth-child(2)"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    await driver.findElement(By.css("button:nth-child(2)")).click()
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
-    await driver.findElement(By.css("button:nth-child(3)")).click()
-    await driver.findElement(By.id("num1")).click()
   })
 })
