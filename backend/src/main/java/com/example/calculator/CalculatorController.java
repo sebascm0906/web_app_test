@@ -1,7 +1,5 @@
 package com.example.calculator;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
+    private static final String template = "Result: %s!";
 
-    @GetMapping("/hello")
-    public Calculator hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Calculator(counter.incrementAndGet(), String.format(template, name));
+    @GetMapping("/add")
+    public Calculator add(@RequestParam(value = "num1", defaultValue = "0") String num1, @RequestParam(value = "num2", defaultValue = "0") String num2) {
+        return new Calculator(String.format(template, Float.toString(Float.parseFloat(num1) + Float.parseFloat(num2))));
+    }
+    @GetMapping("/sub")
+    public Calculator sub(@RequestParam(value = "num1", defaultValue = "0") String num1, @RequestParam(value = "num2", defaultValue = "0") String num2) {
+        return new Calculator(String.format(template, Float.toString(Float.parseFloat(num2) - Float.parseFloat(num1))));
     }
 }
