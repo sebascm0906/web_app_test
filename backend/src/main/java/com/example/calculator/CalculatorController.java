@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
-    private static final String template = "Result: %s!";
+    private static final String template = "Result: %s";
 
     @GetMapping("/add")
     public Calculator add(@RequestParam(value = "num1", defaultValue = "0") String num1, @RequestParam(value = "num2", defaultValue = "0") String num2) {
