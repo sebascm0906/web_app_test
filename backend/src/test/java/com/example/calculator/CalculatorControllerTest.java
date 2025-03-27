@@ -19,7 +19,7 @@ public class CalculatorControllerTest {
         ResponseEntity<Calculator> response = restTemplate.getForEntity("/add?num1=1&num2=2", Calculator.class);
         System.out.println("Response Body: " + response.getBody());
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        // assertEquals("Result: 3.0", response.getBody().getResult());
+        // assertEquals("Result: 3.0", response.getBody().getResult()); new push for pr
     }
 
     @Test
@@ -27,6 +27,6 @@ public class CalculatorControllerTest {
         ResponseEntity<Calculator> response = restTemplate.getForEntity("/sub?num1=1&num2=2", Calculator.class);
         System.out.println("Response Body: " + response.getBody());
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        // assertEquals("Result: 1.0", response.getBody().getResult());
+        // assertEquals("Result: 1.0", response.getBody().getResult()); new push for pr
     }
 }
